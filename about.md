@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-<img src="/images/quigley_daniel_one_light_3.jpg" alt="Profile Picture" style="float: left; margin-right: 20px; width: 240px;">
+<img src="/images/quigley_daniel_one_light_3_crop.jpg" alt="Profile Picture" style="float: left; margin-right: 20px; width: 240px;">
 
 Born and raised in Milwaukee, Wisconsin, I have deep Midwestern roots (and the accent to match). I studied physics, astronomy, mathematics, linguistics, and anthropology at UW-Madison for my undergraduate years, and I lived in the Netherlands during my Master's certificate at Universiteit Utrecht. I am now again home in Milwaukee for my PhD at UW-Milwaukee.
 
