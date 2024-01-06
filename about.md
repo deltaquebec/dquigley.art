@@ -17,3 +17,5 @@ I believe that technical expertise without translation is lost knowledge. Or, pr
 - _L'expertise technique sans traduction est un savoir perdu_
 
 Every effort should be made to practice good scientific communication, making knowledge accessible and available. I believe in openness and in free and open access to education and educational materials. All work presented here, unless specified otherwise, is [licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). © Daniel Quigley, 2023. 
+
+For my professional academic page, please see: [Linguistics and AI PhD Student](https://dquigley.dev/)
