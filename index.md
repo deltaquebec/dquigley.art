@@ -5,7 +5,7 @@ title: Home
 
 ### [ˈdæn.jəl ˈkʰw̥ɪɡ.li]
 
-<img src="/images/quigley_daniel_two_lights_port_2.jpg" alt="Profile Picture" style="float: right; margin-left: 20px; width: 240px;">
+<img src="/images/quigley_daniel_two_lights_port_3.jpg" alt="Profile Picture" style="float: right; margin-left: 20px; width: 240px;">
 
 I'm a PhD student at the [University of Wisconsin - Milwaukee](https://uwm.edu/) [Linguistics Department](https://uwm.edu/linguistics/), advised by [Nicholas Fleisher](https://uwm.edu/linguistics/people/fleisher-nicholas/). My research is interdisciplinary, and involves aspects of linguistics, mathematics, philosophy, and computer science. 
 
