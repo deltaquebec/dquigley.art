@@ -89,3 +89,11 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+mini_magick:
+    photoFolders:
+        source: album
+        destination: thumbnails/album
+        resize: "320x240^"
+        gravity: "center"
+        extent: "320x240"
