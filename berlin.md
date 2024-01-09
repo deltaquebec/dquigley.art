@@ -5,6 +5,6 @@ permalink: /berlin/
 description: "An example photo gallery."
 
 photos:
-    set: berlin
+    set: test
     size: 4
 ---
