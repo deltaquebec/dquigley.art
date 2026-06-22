@@ -58,6 +58,21 @@ baseurl: ""
 
 permalink: /:title/
 
+# Photo albums as a collection. Each file in _albums/ becomes a page at
+# /photos/<name>/; images are read from /album/<name>/ and thumbnails from
+# /thumb/<name>/ (see bin/make-thumbs.sh).
+collections:
+  albums:
+    output: true
+    permalink: /photos/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: albums
+    values:
+      layout: album
+
 # The release of Jekyll Now that you're using
 version: v1.2.0
 
