@@ -14,7 +14,7 @@
   display: block;
   position: relative;
   text-decoration: none;
-  border: 1px solid $lightGray;
+  border: 1px solid var(--light-gray);
 
   img {
     display: block;
@@ -27,13 +27,13 @@
 .album-card-title {
   display: block;
   padding: 8px 10px;
-  color: $darkGray;
+  color: var(--heading-color);
   font-weight: 600;
 }
 
 // album page: photo grid
 .album-desc {
-  color: $gray;
+  color: var(--gray);
   margin-bottom: 20px;
 }
 
@@ -72,7 +72,7 @@
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba($black, 0.92);
+  background: rgba(0, 0, 0, 0.92);
   align-items: center;
   justify-content: center;
 
@@ -95,7 +95,7 @@
 }
 
 .lb-caption {
-  color: $white;
+  color: #fff;
   margin-top: 10px;
   font-size: 14px;
 }
@@ -106,7 +106,7 @@
   position: absolute;
   background: none;
   border: 0;
-  color: $white;
+  color: #fff;
   cursor: pointer;
   line-height: 1;
   padding: 12px;
