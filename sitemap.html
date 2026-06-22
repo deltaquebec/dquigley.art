@@ -1,0 +1,31 @@
+---
+layout: page
+title: Sitemap
+permalink: /sitemap/
+---
+
+<h2>Pages</h2>
+<ul>
+  <li><a href="{{ '/' | relative_url }}">Home</a></li>
+  <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+  <li><a href="{{ '/posts/' | relative_url }}">Posts</a></li>
+  <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+</ul>
+
+{% if site.albums.size > 0 %}
+<h2>Galleries</h2>
+<ul>
+  {% for album in site.albums %}
+  <li><a href="{{ album.url | relative_url }}">{{ album.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if site.posts.size > 0 %}
+<h2>Posts</h2>
+<ul>
+  {% for post in site.posts %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
