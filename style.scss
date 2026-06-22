@@ -10,23 +10,61 @@
 @import "gallery";
 // Syntax highlighting @import is at the bottom of this file
 
-/*-- scss:defaults --*/
-// Include theme-specific fonts
-@import url("https://fonts.googleapis.com/css?family=Lexend");
+// webfonts
+@import url("https://fonts.googleapis.com/css2?family=Lexend&display=swap");
 @font-face {
   font-family: 'Doulos SIL';
-  src: url('/fonts/DoulosSIL-Regular.woff2') format('woff2');
+  src: url('/fonts/DoulosSIL-Regular.woff2') format('woff2'),
+       url('/fonts/DoulosSIL-Regular.woff') format('woff');
+  font-display: swap;
 }
-@import url("https://fonts.googleapis.com/css2?family=Doulos+SIL&display=swap");
 
-// fonts
-$mainFont: "Lexend";
-$headingFont: "Lexend";
-$font-family-sans-serif: "Lexend";
-$presentation-heading-font: "Lexend";
+// font stacks (fallbacks added; change the family here to restyle)
+$mainFont: "Lexend", system-ui, -apple-system, sans-serif;
+$headingFont: "Lexend", system-ui, -apple-system, sans-serif;
+$font-family-sans-serif: $mainFont;
 
 .ipa {
   font-family: 'Doulos SIL', serif;
+}
+
+/**************/
+/* THEME VARS */
+/**************/
+
+// dark is the default: :root holds the dark palette, so a no-js or
+// pre-script first paint is dark (no light flash). light/medium override.
+:root, [data-theme="dark"] {
+  --bg-color: #191919;
+  --text-color: #edebeb;
+  --heading-color: #f5f5f5;
+  --accent-blue: #00affa;
+  --gray: #aaaaaa;
+  --light-gray: #333333;
+  --selection-bg: #004f70;
+  --table-header-bg: #2a2a2a;
+}
+
+[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #444444;
+  --heading-color: #333333;
+  --accent-blue: #004f70;
+  --gray: #666666;
+  --light-gray: #eeeeee;
+  --selection-bg: #ADD8E6;
+  --table-header-bg: #f5f5f5;
+}
+
+[data-theme="medium"] {
+  --bg-color: #eeeef0;
+  --text-color: #444444;
+  --heading-color: #333333;
+  --accent-blue: #004f70;
+  --gray: #666666;
+  --light-gray: #d8d8da;
+  --selection-bg: #ADD8E6;
+  --table-header-bg: #e0e0e2;
 }
 
 /**************/
@@ -38,9 +76,9 @@ html {
 }
 
 body {
-	background: $white;
+  background: var(--bg-color);
   font: 18px/1.4 $mainFont;
-  color: $darkGray;
+  color: var(--text-color);
 }
 
 .container {
@@ -50,13 +88,10 @@ body {
   width: 100%;
 }
 
-
-
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-sans-serif;
-  color: $darkerGray;
+  font-family: $headingFont;
+  color: var(--heading-color);
   font-weight: bold;
-
   line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
@@ -83,7 +118,7 @@ h3 {
 
 h4 {
   font-size: 18px;
-  color: $gray;
+  color: var(--gray);
 }
 
 p {
@@ -91,11 +126,11 @@ p {
 }
 
 a {
-  color: $blue;
+  color: var(--accent-blue);
   text-decoration: none;
-	cursor: pointer;
+  cursor: pointer;
   &:hover, &:active {
-    color: $blue;
+    color: var(--accent-blue);
   }
 }
 
@@ -139,17 +174,17 @@ img {
 
 .date {
   font-style: italic;
-  color: $gray;
+  color: var(--gray);
 }
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $black;
-  background: #ADD8E6;
+  color: var(--heading-color);
+  background: var(--selection-bg);
 }
 ::selection {
-  color: $black;
-  background: #ADD8E6;
+  color: var(--heading-color);
+  background: var(--selection-bg);
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -178,7 +213,7 @@ img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid var(--light-gray);
 
   @include mobile {
     text-align: center;
@@ -214,7 +249,7 @@ img {
 
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: var(--text-color);
   cursor: pointer;
   font-family: $font-family-sans-serif;
   font-weight: 300;
@@ -224,7 +259,7 @@ img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $gray;
+  color: var(--gray);
   font-size: 16px;
 
   @include mobile {
@@ -234,28 +269,46 @@ img {
 
 nav {
   float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  margin-top: 23px;
   font-family: $font-family-sans-serif;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 
   @include mobile {
     float: none;
     margin-top: 9px;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     font-size: 16px;
   }
 
   a {
-    margin-left: 20px;
-    color: $darkGray;
-    text-align: right;
+    color: var(--text-color);
     font-weight: 300;
     letter-spacing: 1px;
 
     @include mobile {
-      margin: 0 10px;
-      color: $blue;
+      color: var(--accent-blue);
     }
+  }
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-color);
+  font-family: $font-family-sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  
+  &:hover {
+    color: var(--accent-blue);
   }
 }
 
@@ -265,7 +318,7 @@ nav {
 
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid var(--light-gray);
 }
 
 .posts > .post:last-child {
@@ -276,9 +329,9 @@ nav {
 .post {
   blockquote {
     margin: 1.8em .8em;
-    border-left: 2px solid $gray;
+    border-left: 2px solid var(--gray);
     padding: 0.1em 1em;
-    color: $gray;
+    color: var(--gray);
     font-size: 22px;
     font-style: italic;
   }
@@ -295,9 +348,9 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  border-top: 1px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+  background-color: var(--light-gray);
 }
 
 footer {
@@ -312,18 +365,17 @@ footer {
 
 /* Table Styles */
 table {
-    width: 100%; /* The table will take up the full width of its containing element. */
-    border-collapse: separate; /* Borders of table cells will be displayed as separate entities. This is necessary for 'border-spacing' to work. */
-    border-spacing: 0em 0.5em; /* This sets the horizontal space between cell borders to 2em and vertical space to 0.5em. */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0em 0.5em;
 }
 
 th, td {
-    padding: 8px 8px; /* Sets the internal spacing (padding) of both table headers (th) and table data (td) cells. Top and bottom padding is 8px, left and right padding is 12px. */
-    /* border: 1px solid #ddd; /* Every table cell (both headers and data) will have a 1-pixel-wide, solid border with a light gray color. */
-    text-align: left; /* Text within the cells will be left-aligned. */
+    padding: 8px 8px;
+    text-align: left;
 }
 
 th {
-    background-color: #f5f5f5; /* Table headers will have a light grey background color. */
-    font-weight: bold; /* Text within the table headers will be displayed in bold. */
+    background-color: var(--table-header-bg);
+    font-weight: bold;
 }
