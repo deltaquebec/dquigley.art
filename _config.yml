@@ -59,12 +59,12 @@ baseurl: ""
 permalink: /:title/
 
 # Photo albums as a collection. Each file in _albums/ becomes a page at
-# /photos/<name>/; images are read from /album/<name>/ and thumbnails from
+# /gallery/<name>/; images are read from /album/<name>/ and thumbnails from
 # /thumb/<name>/ (see bin/make-thumbs.sh).
 collections:
   albums:
     output: true
-    permalink: /photos/:name/
+    permalink: /gallery/:name/
 
 defaults:
   - scope:
