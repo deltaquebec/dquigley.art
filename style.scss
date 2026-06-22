@@ -88,6 +88,23 @@ body {
   width: 100%;
 }
 
+// skip link: off-screen until focused via keyboard
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  padding: 8px 12px;
+  background: var(--bg-color);
+  color: var(--accent-blue);
+
+  &:focus {
+    left: 8px;
+    top: 8px;
+    outline: 2px solid var(--accent-blue);
+  }
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $headingFont;
   color: var(--heading-color);
