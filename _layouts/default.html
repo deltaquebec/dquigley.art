@@ -59,7 +59,7 @@
         <header class="masthead clearfix">
           <a href="{{ site.baseurl }}/" class="site-avatar" aria-label="Home"><img src="{{ site.avatar }}" alt="" role="presentation" /></a>
 
-          <div class="site-info">
+          <div class="site-meta">
             <p class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></p>
             <p class="site-description">{{ site.description }}</p>
           </div>
@@ -71,7 +71,7 @@
             <a href="{{ site.baseurl }}/cv">CV</a> -->
             <a href="{{ site.baseurl }}/posts">Posts</a>
             <a href="{{ site.baseurl }}/about">About</a>
-            <button class="theme-toggle" onclick="cycleTheme()" aria-label="Cycle light, medium, dark theme">&#9680;</button>
+            <button class="theme-toggle" onclick="cycleTheme()" aria-label="Switch color theme"><span aria-hidden="true">&#9680;</span></button>
           </nav>
         </header>
       </div>
@@ -85,6 +85,7 @@
       <div class="container">
         <footer class="footer">
           {% include svg-icons.html %}
+          <p class="footer-links"><a href="{{ site.baseurl }}/sitemap/">Sitemap</a></p>
         </footer>
       </div>
     </div>
