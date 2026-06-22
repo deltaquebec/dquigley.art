@@ -3,7 +3,7 @@ layout: page
 title: Home
 ---
 
-### <span class="ipa">[ˈdæn.jəl ˈkʰw̥ɪ.ɡli]</span>
+## <span class="ipa">[ˈdæn.jəl ˈkʰw̥ɪ.ɡli]</span>
 <!--
 <img src="/images/quigley_daniel_two_lights_port_3.jpg" alt="Profile Picture" style="float: right; margin-left: 20px; width: 240px;">
 -->
