@@ -4,12 +4,28 @@ layout: default
 
 {% assign dir = page.dir | default: page.slug %}
 {% assign prefix = '/album/' | append: dir | append: '/' %}
-{% assign photos = site.static_files | where_exp: "f", "f.path contains prefix" | sort: "path" %}
 
 <article class="album">
   <h1>{{ page.title }}</h1>
   {% if page.description %}<p class="album-desc">{{ page.description }}</p>{% endif %}
 
+  {% if page.photos %}
+  {% comment %} explicit list: order and metadata come from front matter {% endcomment %}
+  <div class="gallery">
+    {% for item in page.photos %}
+      {% assign full = prefix | append: item.file %}
+      {% assign thumb = full | replace: '/album/', '/thumb/' %}
+      {% assign alt = item.alt | default: item.caption | default: page.title %}
+      <a class="gallery-item" href="{{ full | prepend: site.baseurl }}"
+         {% if item.caption %}data-caption="{{ item.caption | escape }}"{% endif %}>
+        <img loading="lazy" src="{{ thumb | prepend: site.baseurl }}" alt="{{ alt | escape }}">
+      </a>
+    {% endfor %}
+  </div>
+
+  {% else %}
+  {% comment %} auto: glob the folder, order by filename; optional captions map {% endcomment %}
+  {% assign photos = site.static_files | where_exp: "f", "f.path contains prefix" | sort: "path" %}
   {% if photos == empty %}
     <p>No photos in <code>{{ prefix }}</code> yet.</p>
   {% else %}
@@ -24,6 +40,7 @@ layout: default
       </a>
     {% endfor %}
   </div>
+  {% endif %}
   {% endif %}
 
   <p class="album-back"><a href="{{ site.baseurl }}/gallery/">Back to gallery</a></p>
