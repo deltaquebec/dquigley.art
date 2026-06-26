@@ -1,5 +1,5 @@
 ---
-title: Objects
+title: Objects 1
 description: "Some interesting objects"
 order: 3
 # --- album ordering on the /gallery/ index ---
