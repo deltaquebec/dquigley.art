@@ -1,7 +1,7 @@
 ---
 title: Objects
 description: "Some interesting objects"
-order: 1
+order: 3
 # --- album ordering on the /gallery/ index ---
 # `order` sorts the album cards (ascending). give every album one.
 #
