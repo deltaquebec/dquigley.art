@@ -7,16 +7,51 @@ permalink: /sitemap/
 <h2>Pages</h2>
 <ul>
   <li><a href="{{ '/' | relative_url }}">Home</a></li>
-  <li><a href="{{ '/gallery/' | relative_url }}">Gallery</a></li>
+  <li><a href="{{ '/art/' | relative_url }}">Art</a></li>
+  <li><a href="{{ '/photography/' | relative_url }}">Photography</a></li>
+  <li><a href="{{ '/traditional/' | relative_url }}">Traditional</a></li>
+  <li><a href="{{ '/music/' | relative_url }}">Music</a></li>
+  <li><a href="{{ '/video/' | relative_url }}">Video</a></li>
   <li><a href="{{ '/posts/' | relative_url }}">Posts</a></li>
   <li><a href="{{ '/about/' | relative_url }}">About</a></li>
 </ul>
 
-{% if site.albums.size > 0 %}
-<h2>Galleries</h2>
+{% assign photography = site.albums | where: "category", "photography" | sort: "order" %}
+{% if photography.size > 0 %}
+<h2>Photography</h2>
 <ul>
-  {% for album in site.albums %}
+  {% for album in photography %}
   <li><a href="{{ album.url | relative_url }}">{{ album.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% assign traditional = site.albums | where: "category", "traditional" | sort: "order" %}
+{% if traditional.size > 0 %}
+<h2>Traditional</h2>
+<ul>
+  {% for album in traditional %}
+  <li><a href="{{ album.url | relative_url }}">{{ album.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% assign music = site.works | where: "medium", "music" | sort: "order" %}
+{% if music.size > 0 %}
+<h2>Music</h2>
+<ul>
+  {% for work in music %}
+  <li><a href="{{ work.url | relative_url }}">{{ work.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% assign video = site.works | where: "medium", "video" | sort: "order" %}
+{% if video.size > 0 %}
+<h2>Video</h2>
+<ul>
+  {% for work in video %}
+  <li><a href="{{ work.url | relative_url }}">{{ work.title }}</a></li>
   {% endfor %}
 </ul>
 {% endif %}
