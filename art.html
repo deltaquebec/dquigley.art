@@ -1,0 +1,34 @@
+---
+layout: default
+title: Art
+permalink: /art/
+description: "Galleries, music, and video."
+---
+
+<h1>Art</h1>
+
+<p class="art-intro">
+  <!-- edit: prose in the register of index.md / about.md -->
+  Images, music, and video collected in one place. [replace with your framing.]
+</p>
+
+<div class="album-index">
+  <a class="album-card" href="{{ site.baseurl }}/gallery">
+    <!-- optional: image at /images/section-gallery.jpg, then uncomment -->
+    <!-- <img loading="lazy" src="{{ site.baseurl }}/images/section-gallery.jpg" alt="Gallery"> -->
+    <span class="album-card-title">Gallery</span>
+  </a>
+  <a class="album-card" href="{{ site.baseurl }}/music">
+    <span class="album-card-title">Music</span>
+  </a>
+  <a class="album-card" href="{{ site.baseurl }}/video">
+    <span class="album-card-title">Video</span>
+  </a>
+</div>
+
+{% assign recent = site.works | sort: "date" | reverse %}
+{% if recent != empty %}
+  {% assign recent = recent | slice: 0, 6 %}
+  <h2>Recent</h2>
+  {% include work-cards.html works=recent %}
+{% endif %}
