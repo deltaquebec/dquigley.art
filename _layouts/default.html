@@ -86,6 +86,16 @@
       </div>
     </div>
 
+    <script>
+      document.querySelectorAll('.nav-group').forEach(function (g) {
+        var t = g.querySelector('.nav-trigger');
+        t.setAttribute('aria-expanded', 'false');
+        g.addEventListener('focusin', function () { t.setAttribute('aria-expanded', 'true'); });
+        g.addEventListener('focusout', function () { t.setAttribute('aria-expanded', 'false'); });
+        t.addEventListener('keydown', function (e) { if (e.key === 'Escape') t.blur(); });
+      });
+      </script>
+    
     <div id="main" role="main" class="container">
       {{ content }}
     </div>
