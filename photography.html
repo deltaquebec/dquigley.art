@@ -1,0 +1,10 @@
+---
+layout: default
+title: Photography
+permalink: /photography/
+description: "Photography."
+---
+
+<h1>Photography</h1>
+{% assign albums = site.albums | where: "category", "photography" | sort: "order" %}
+{% include album-cards.html albums=albums %}
