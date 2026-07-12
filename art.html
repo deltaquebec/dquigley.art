@@ -14,8 +14,6 @@ description: "Galleries, music, and video."
 
 <div class="album-index">
   <a class="album-card" href="{{ site.baseurl }}/gallery">
-    <!-- optional: image at /images/section-gallery.jpg, then uncomment -->
-    <!-- <img loading="lazy" src="{{ site.baseurl }}/images/section-gallery.jpg" alt="Gallery"> -->
     <span class="album-card-title">Gallery</span>
   </a>
   <a class="album-card" href="{{ site.baseurl }}/music">
@@ -25,10 +23,3 @@ description: "Galleries, music, and video."
     <span class="album-card-title">Video</span>
   </a>
 </div>
-
-{% assign recent = site.works | sort: "date" | reverse %}
-{% if recent != empty %}
-  {% assign recent = recent | slice: 0, 6 %}
-  <h2>Recent</h2>
-  {% include work-cards.html works=recent %}
-{% endif %}
