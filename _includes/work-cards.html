@@ -1,0 +1,13 @@
+{% assign works = include.works | sort: "order" %}
+{% if works == empty %}
+  <p>Nothing here yet.</p>
+{% else %}
+<div class="album-index">
+  {% for w in works %}
+    <a class="album-card" href="{{ w.url | prepend: site.baseurl }}">
+      {% if w.cover %}<img loading="lazy" src="{{ w.cover | prepend: site.baseurl }}" alt="{{ w.title }}">{% endif %}
+      <span class="album-card-title">{{ w.title }}</span>
+    </a>
+  {% endfor %}
+</div>
+{% endif %}
