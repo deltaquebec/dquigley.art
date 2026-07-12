@@ -460,6 +460,33 @@ nav {
   }
 }
 
+// works (music / video)
+.work {
+  audio { width: 100%; margin: 0.5em 0 1.5em; }
+
+  .work-track-label { margin: 1em 0 0.3em; color: var(--gray); font-style: italic; }
+
+  .video-embed {
+    position: relative;
+    padding-bottom: 56.25%; // 16:9
+    height: 0;
+    margin: 1em 0 1.5em;
+
+    iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 6px; }
+  }
+
+  video { width: 100%; margin: 1em 0 1.5em; border-radius: 6px; }
+
+  .work-score object {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid var(--light-gray);
+    border-radius: 6px;
+  }
+
+  .work-score-dl { margin: 0.6em 0 1.5em; }
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid var(--light-gray);
