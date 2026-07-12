@@ -1,0 +1,10 @@
+---
+layout: default
+title: By hand
+permalink: /by-hand/
+description: "Work by hand."
+---
+
+<h1>By hand</h1>
+{% assign albums = site.albums | where: "category", "byhand" | sort: "order" %}
+{% include album-cards.html albums=albums %}
