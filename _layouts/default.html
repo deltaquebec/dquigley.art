@@ -66,8 +66,17 @@
 
           <nav>
             <a href="{{ site.baseurl }}/">Home</a>
-            <a href="{{ site.baseurl }}/gallery">Gallery</a>
-         <!--   <a href="{{ site.baseurl }}/research">Research</a> 
+          
+            <div class="nav-group">
+              <button type="button" class="nav-trigger" aria-haspopup="true">Art <span class="caret" aria-hidden="true">&#9662;</span></button>
+              <div class="nav-menu">
+                <a href="{{ site.baseurl }}/gallery">Gallery</a>
+                <a href="{{ site.baseurl }}/music">Music</a>
+                <a href="{{ site.baseurl }}/video">Video</a>
+              </div>
+            </div>
+          
+            <!--   <a href="{{ site.baseurl }}/research">Research</a>
             <a href="{{ site.baseurl }}/cv">CV</a> -->
             <a href="{{ site.baseurl }}/posts">Posts</a>
             <a href="{{ site.baseurl }}/about">About</a>
