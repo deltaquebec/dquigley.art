@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<article class="work">
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<p class="album-desc">{{ page.description }}</p>{% endif %}
+
+  {% if page.audio %}
+  <div class="work-audio">
+    {% for track in page.audio %}
+      {% if track.label %}<p class="work-track-label">{{ track.label }}</p>{% endif %}
+      <audio controls preload="none" src="{{ track.src | prepend: site.baseurl }}"></audio>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.video %}
+  <div class="work-video">
+    {% if page.video.embed %}
+      <div class="video-embed">
+        <iframe src="{{ page.video.embed }}" title="{{ page.title }}"
+                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    {% elsif page.video.src %}
+      <video controls preload="none"
+             {% if page.cover %}poster="{{ page.cover | prepend: site.baseurl }}"{% endif %}>
+        <source src="{{ page.video.src | prepend: site.baseurl }}">
+      </video>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if page.score %}
+  <div class="work-score">
+    <object data="{{ page.score | prepend: site.baseurl }}#view=FitH" type="application/pdf">
+      <p>Preview unavailable. <a href="{{ page.score | prepend: site.baseurl }}">Download the PDF</a>.</p>
+    </object>
+    <p class="work-score-dl"><a href="{{ page.score | prepend: site.baseurl }}" download>Download score (PDF)</a></p>
+  </div>
+  {% endif %}
+
+  {% assign notes = content | strip %}
+  {% if notes != "" %}<div class="work-notes">{{ content }}</div>{% endif %}
+
+  {% assign back = '/music/' %}
+  {% if page.medium == 'video' %}{% assign back = '/video/' %}{% endif %}
+  <p class="album-back"><a href="{{ site.baseurl }}{{ back }}">Back to {{ page.medium }}</a></p>
+</article>
