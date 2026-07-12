@@ -1,1 +1,28 @@
 albums
+
+---
+title: "Berlin, 2023"
+category: photography
+order: 1
+description: "A week on foot."
+# cover: /thumb/berlin/03.jpg   # optional; defaults to first image
+captions:                        # optional; keyed by file basename
+  01.jpg: "Oberbaumbrücke at dusk"
+  07.jpg: "Tempelhofer Feld"
+---
+
+---
+title: "Woodcuts"
+category: byhand
+order: 1
+description: "Relief prints, 2022 to present."
+cover: /thumb/woodcuts/heron.jpg
+photos:
+  - file: heron.jpg
+    alt: "black heron, single block"
+    caption: "Heron. Single block, 2022."
+  - file: ferns.jpg
+    caption: "Ferns. Two colors, 2023."
+  - file: tide.jpg
+    alt: "abstract tide lines"
+---
