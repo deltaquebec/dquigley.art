@@ -43,7 +43,9 @@ layout: default
   {% endif %}
   {% endif %}
 
-  <p class="album-back"><a href="{{ site.baseurl }}/gallery/">Back to gallery</a></p>
+  {% assign back = '/photography/' %}{% assign label = 'Photography' %}
+  {% if page.category == 'byhand' %}{% assign back = '/by-hand/' %}{% assign label = 'By hand' %}{% endif %}
+  <p class="album-back"><a href="{{ site.baseurl }}{{ back }}">Back to {{ label }}</a></p>
 </article>
 
 <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Photo viewer">
