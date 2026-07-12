@@ -1,0 +1,10 @@
+---
+layout: default
+title: Music
+permalink: /music/
+description: "Original music."
+---
+
+<h1>Music</h1>
+{% assign items = site.works | where: "medium", "music" %}
+{% include work-cards.html works=items %}
