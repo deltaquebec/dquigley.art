@@ -66,6 +66,9 @@ collections:
   albums:
     output: true
     permalink: /gallery/:name/
+  works:
+    output: true
+    permalink: /works/:name/
 
 defaults:
   - scope:
@@ -73,6 +76,11 @@ defaults:
       type: albums
     values:
       layout: album
+  - scope:
+      path: ""
+      type: works
+    values:
+      layout: work
 
 # The release of Jekyll Now that you're using
 version: v1.2.0
