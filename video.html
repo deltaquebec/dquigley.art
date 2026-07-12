@@ -1,0 +1,10 @@
+---
+layout: default
+title: Video
+permalink: /video/
+description: "Video work."
+---
+
+<h1>Video</h1>
+{% assign items = site.works | where: "medium", "video" %}
+{% include work-cards.html works=items %}
