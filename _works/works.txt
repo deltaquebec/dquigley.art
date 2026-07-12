@@ -1,1 +1,29 @@
 works
+
+---
+title: "Nocturne in D"
+medium: music
+order: 1
+date: 2024-05-01
+description: "solo piano, five minutes."
+cover: /works/nocturne/cover.png
+audio:
+  - src: /works/nocturne/nocturne.m4a
+    label: "full recording"
+score: /works/nocturne/nocturne.pdf
+---
+Program notes go here in Markdown. MathJax works if you need it.
+
+
+
+---
+title: "Study in Motion"
+medium: video
+order: 1
+date: 2024-09-01
+description: "accompanied video, three minutes."
+cover: /works/study-in-motion/poster.jpg
+video:
+  embed: https://player.vimeo.com/video/000000000
+---
+Notes on the piece.
