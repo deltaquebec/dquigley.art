@@ -76,6 +76,7 @@ defaults:
       type: albums
     values:
       layout: album
+      category: photography
   - scope:
       path: ""
       type: works
